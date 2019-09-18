@@ -1,0 +1,101 @@
+
+
+<div class="container">
+  
+  
+  
+  <div class="row">
+   
+    <div class="col-sm-4" style="background-color:lavenderblush;margin-right: 20px;height: 750px;">
+  
+ 
+  <div class="top">
+    <h2 style="color: black">Friend's List</h2>
+  </div>
+    <div class="shadow">
+      <div *ngFor="let u of user.friends">
+      <div class="col-sm-12" >
+        <div class="col-sm-2">
+          <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px" *ngIf="!u.image">
+          <img src="{{u.image}}" class="img-circle" width="60px" *ngIf="u.image">
+        </div>
+        <div class="col-sm-7" style="padding-left: 30px;">
+          <h4><a href="javascript:void(0)" style="color: black;">{{u.username}}</a></h4>
+        </div>
+        <div class="col-sm-2">  
+          <a ref="javascript:void(0)" style="color: black;" routerLink="/chat/{{u.username}}">Chat</a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <hr />
+    </div>
+    </div>
+ 
+  </div>
+   
+    
+  
+    <div class="col-sm-7" style="background-color:lavender;height: 750px;">
+      
+      <div class="boom">
+      <div class="example-card">
+        <div class="top">
+          <h2 style="color: black">Find Friends</h2>
+        </div>
+        <div class="row">
+      
+          <div class="shadow">
+            <div *ngFor="let u of userList">
+            <div class="col-sm-12" >
+              <div class="col-sm-2">
+                  <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px" *ngIf="!u.image">
+                  <img src="{{u.image}}" class="img-circle" width="60px" *ngIf="u.image">
+              </div>
+              <div class="col-sm-8">
+                <h4><a href="javascript:void(0)" style="color: black;">{{u.username}}</a></h4>
+              </div>
+              <div class="col-sm-2">          
+                <a ref="javascript:void(0)" (click)="sendRequest(u._id, u.username)" *ngIf="!u.request" style="color: black;">Send Request</a>
+                <a ref="javascript:void(0)" style="color: black;" *ngIf="u.request">Request Sent</a>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <hr />
+          </div>
+          </div>
+        </div>
+          </div>
+        </div>
+  
+  
+  
+  </div> <!-- right bar-->
+  
+
+ 
+     
+  </div>
+  
+    
+    <!--h1 class="display-4">Hello, {{username}}!</h1>-->
+    
+    
+     
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
